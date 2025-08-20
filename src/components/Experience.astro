@@ -1,0 +1,39 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+import certification_document from "../assets/Certificación-Carlos Alejandro Gómez Albarracín.pdf";
+
+
+const EXPERIENCE = [
+  {
+    date: "Actualmente...",
+    tittle: "Freelance Unity Developer",
+    description:
+      "Me dedico al desarrollo de videojuegos y aplicaciones interactivas utilizando Unity, integrando diversos SDKs para ampliar sus funcionalidades y lograr experiencias inmersivas, interactivas y atractivas para el usuario.",
+    link: "#",
+  },
+  {
+    date: "Marzo 2025",
+    tittle: "Joven Investigador",
+    description:
+      "Participé como ponente en el 2.º Congreso Nacional de Ingeniería Industrial y Sistemas, presentando el artículo titulado ''¿Cómo documentar la memoria histórica del Amazonas desde la ingeniería?'', llevado a cabo los días 20 y 21 de marzo de 2025 en el Tecnológico de Estudios Superiores de Ecatepec.",
+    link: certification_document
+  },
+  {
+    date: "Septiembre 2024 - Noviembre 2024",
+    tittle: "Joven Investigador",
+    description:
+      "Desarrollé el sistema de transportación instantánea para la experiencia 'Realidad Virtual ARC Tecim Reyes Holguín', parte del proyecto 'Corrientes de memoria'. Este sistema permite a los usuarios desplazarse de forma inmediata a diferentes lugares clave dentro de la experiencia.",
+    link: "https://corrientesdememoria.com/Experiencia-VR.html",
+  },
+];
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700 ml-3">
+  {
+    EXPERIENCE.map((experiencie) => (
+      <li class="mb-10 ms-4">
+        <ExperienceItem {...experiencie} />
+      </li>
+    ))
+  }
+</ol>

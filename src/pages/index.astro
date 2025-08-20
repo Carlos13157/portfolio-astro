@@ -1,11 +1,95 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Welcome from "../components/Welcome.astro";
+import Layout from "../layouts/Layout.astro";
+import Badge from "../components/Badge.astro";
+import profile_photo from "../assets/profile-photo.jpg";
+import LinkedInIcon from "../icons/LinkedIn.astro";
+import GitHubIcon from "../icons/GitHub.astro";
+import GmailIcon from "../icons/Gmail.astro";
+import SocialPill from "../components/SocialPill.astro";
+import Experience from "../components/Experience.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import BriefCaseIcon from "../icons/BriefCase.astro";
+import OutlookIcon from "../icons/Outlook.astro";
+import UnityIcon from "../icons/Unity.astro";
+import Projects from "../components/Projects.astro";
+import AboutMe from "../components/AboutMe.astro";
+import ProfileIcon from "../icons/Profile.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+  tittle="Portfolio Carlos Gómez - Ingeniero Multimedia y Unity Developer"
+  description="Portafolio de Carlos Gómez, Ingeniero Multimedia y Unity Developer con 1 año de experiencia en desarrollo de videojuegos y aplicaciones interactivas. Explora mis proyectos y habilidades en Unity, C#, y más."
+>
+  <SectionContainer class="py-44 pb-32">
+    <img
+      class="rounded-full size-12 mb-4 object-cover object-[center_20%]"
+      src={profile_photo.src}
+      alt="profile photo"
+    />
+    <main class="px-4">
+      <h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">
+        Hey, Soy Carlos <a
+          href="https://www.linkedin.com/in/carlos-gomez-8217b4244/"
+        >
+          <div class="flex justify-center items-center">
+            <Badge>Disponible para trabajar</Badge>
+          </div></a
+        >
+      </h1>
+      <h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
+        <span>1 año de experiencia (freelance). </span><span
+          class="text-blue-200/90"
+        >
+          Ingeniero Multimedia y Unity Developer.</span
+        >
+        <span class="text-red-100/90">De Tocancipa, Cundinamarca.</span>
+        <span class="opacity-75">Enfocado en el desarrollo con Unity. </span>
+      </h2>
+      <nav class="flex gap-4 mt-8 flex-wrap">
+        <SocialPill href="https://www.linkedin.com/in/carlos-gomez-8217b4244/">
+          <LinkedInIcon class="size-4 md:size-6" /> LinkedIn
+        </SocialPill>
+
+        <SocialPill href="https://github.com/Carlos13157">
+          <GitHubIcon class="size-4 md:size-6" /> GitHub
+        </SocialPill>
+
+        <SocialPill href="mailto:calejoga@gmail.com">
+          <GmailIcon class="size-4 md:size-6" /> calejoga@gmail.com
+        </SocialPill>
+        
+        <SocialPill href="mailto:calejoga@hotmail.com">
+          <OutlookIcon class="size-4 md:size-6" /> calejoga@hotmail.com
+        </SocialPill>
+      </nav>
+    </main>
+  </SectionContainer>
+
+  <SectionContainer id="experiencia">
+    <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+      <BriefCaseIcon class="size-7"/>
+      Experiencia Laboral
+    </h2>
+    <Experience />
+  </SectionContainer>
+  
+  <SectionContainer id="proyectos">
+    <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+      <UnityIcon class="size-7"/>
+        Proyectos
+    </h2>
+    <Projects/>
+  </SectionContainer>
+  
+  <SectionContainer id="sobre-mi">
+    <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+      <ProfileIcon class="size-9"/>
+        Sobre mi
+    </h2>
+    <AboutMe/>
+  </SectionContainer>
 </Layout>

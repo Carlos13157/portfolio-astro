@@ -1,0 +1,82 @@
+---
+import UnityIcon from "../icons/Unity.astro";
+import CsharpIcon from "../icons/C-sharp.astro";
+import LinkButton from "./LinkButton.astro";
+import LinkIcon from "../icons/Link.astro";
+
+const TAGS = {
+  UNITY: {
+    name: "Unity",
+    class: "bg-black text-white",
+    icon: UnityIcon,
+  },
+  C_SHARP: {
+    name: "C#",
+    class: "bg-[#bd4fff] text-white",
+    icon: CsharpIcon,
+  },
+};
+
+const PROJECTS = [
+  {
+    tittle: "Space Shooter - 2D Drop Down Shooter and Arcade Game",
+    description:
+      "Un juego de disparos 2D en perspectiva Dropdown y modalidad arcade donde tienes que eliminar enemigos y aguantar el mayor tiempo posible para ganar tantos puntos como puedas.",
+    link: "https://krlos13157.itch.io/space-shooter-vsl",
+    github: "",
+    image: "/Space-shooter-mock-up.png",
+    tags: [TAGS.UNITY, TAGS.C_SHARP],
+  },
+  {
+    tittle: "Dungeon Escape - 2D Plattform Game",
+    description:
+      "Un Juego de plataformas 2D (En progreso) donde tienes que eliminar distintos tipos de enemigos para juntar puntos sufucientes y comprar una llave que te permitirá superar el nivel.",
+    link: "https://krlos13157.itch.io/dungeon-escape-by-cg",
+    github: "",
+    image: "/Dungeon-escape-mockup-reduced.png",
+    tags: [TAGS.UNITY, TAGS.C_SHARP],
+  },
+  {
+    tittle: "The Great Fleece - 3D Cinematic Game",
+    description:
+      "Un juego cinematico en 3D, en donde tienes que atravesar una habitacion con variedad de obstaculos para conseguir un objeto clave que te permitirá superar el nivel.",
+    link: "https://krlos13157.itch.io/the-great-fleece-by-cg",
+    github: "",
+    image: "/The-Great-Fleece-reduced.png",
+    tags: [TAGS.UNITY, TAGS.C_SHARP],
+  },
+];
+---
+
+{
+  PROJECTS.map(({ tittle, description, image, tags, link }) => (
+    <article >
+      <h3 class="text-2xl font-semibold text-sky-200/80 mb-2 mt-4">{tittle}</h3>
+      <p class="text-lg mb-2 text-pretty">{description}</p>
+      <ul class="flex gap-x-2 flex-row mb-3">
+        {tags.map((tag) => (
+          <li>
+            <span
+              class={` flex gap-x-2 rounded-full text-sm ${tag.class} py-1 px-2`}
+            >
+              <tag.icon class="size-5" /> {tag.name}
+            </span>
+          </li>
+        ))}
+      </ul>
+      
+      <img
+        class="rounded shadow-2xl shadow-white/10"
+        src={image}
+        alt={`Screenshot project ${image}`}
+      />
+
+      <div class="mt-3">
+        <LinkButton href={link}>
+          <LinkIcon class="size-4" />
+          Link
+        </LinkButton>
+      </div>
+    </article>
+  ))
+}
