@@ -3,12 +3,14 @@ import { Image } from "astro:assets";
 import profile_photo from "../assets/profile-photo.jpg";
 ---
 
-<header class="flex justify-center items-center py-5 w-full xl:w-[1120px] mx-auto">
-  <nav class="flex flex-row gap-x-10 opacity-80">
-    <a href="#top">Inicio</a>
-    <a href="#experiencia">Experiencia</a>
-    <a href="#proyectos">Proyectos</a>
-    <a href="#sobre-mi">Sobre mí</a>
-    <a href="mailto:calejoga@gmail.com">Contacto</a>
+<header class="flex justify-center items-center py-4 px-2 w-full xl:w-[1120px] mx-auto">
+  <nav
+    class="flex flex-wrap gap-3 sm:gap-6 md:gap-8 lg:gap-10 text-sm sm:text-base font-medium text-gray-600 dark:text-gray-200 opacity-90"
+  >
+    <a class="px-2 py-1 hover:text-orange-500 transition" href="#top">Inicio</a>
+    <a class="px-2 py-1 hover:text-orange-500 transition" href="#experiencia">Experiencia</a>
+    <a class="px-2 py-1 hover:text-orange-500 transition" href="#proyectos">Proyectos</a>
+    <a class="px-2 py-1 hover:text-orange-500 transition" href="#sobre-mi">Sobre mí</a>
+    <a class="px-2 py-1 hover:text-orange-500 transition" href="mailto:calejoga@gmail.com">Contacto</a>
   </nav>
 </header>
